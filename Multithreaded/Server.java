@@ -1,13 +1,11 @@
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 import java.util.function.Consumer;
 
 public class Server {
 
-    public Consumer <Socket> getConsumer(){
-        return(clientSocket)->{
+    public Consumer<Socket> getConsumer() {
+        return (clientSocket) -> {
             try {
                 PrintWriter toCllient = new PrintWriter(clientSocket.getOutputStream());
                 toCllient.println("Hello from the server");
