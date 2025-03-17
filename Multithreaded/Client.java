@@ -34,6 +34,7 @@ public class Client {
 
     public static void main(String[] args) {
         Client client = new Client();
+        // Create 100 threads to simulate 100 clients
         for (int i = 0; i < 100; i++) {
             try {
                 Thread thread = new Thread(client.getRunnable());
